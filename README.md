@@ -30,6 +30,7 @@ Because the plugin listens to `Run<?, ?>`, agent-side installation is not requir
 - Jenkins Core baseline: `2.479.3`
 - Java: 17 runtime, Java 17 source level from plugin parent
 - Maven used for validation here: `3.9.11`
+- Maven HPI extension: `.mvn/extensions.xml` pins `maven-hpi-plugin:3.1814.v77d15159f9b_d` so Maven can resolve `<packaging>hpi</packaging>` when building from a GitHub zip or fresh clone.
 - Credentials Plugin: managed through Jenkins plugin BOM for `2.479.x`
 - Plain Credentials Plugin: managed through Jenkins plugin BOM for `2.479.x`
 - Test Harness/JUnit: managed by Jenkins plugin parent
@@ -156,10 +157,14 @@ Verify JCasC load from Manage Jenkins -> Configuration as Code -> View Configura
 
 ## Build
 
+Use Java 17 and Maven 3.9.x.
+
 ```bash
 mvn clean verify
 mvn hpi:run
 ```
+
+If Maven prints `Unknown packaging: hpi`, make sure the repository contains `.mvn/extensions.xml` and rerun the command from the project root. Maven 4 prerelease builds may behave differently with Jenkins plugin packaging; Maven 3.9.x is the recommended version for this project.
 
 The installable file is generated at:
 

@@ -18,14 +18,14 @@
 
   <name>Global Telegram Build Notifier</name>
   <description>Global Jenkins RunListener that sends build completion notifications to Telegram.</description>
-  <url>https://github.com/your-org/global-telegram-build-notifier</url>
+  <url>https://github.com/LiaoPerry/global-telegram-build-notifier</url>
 
   <properties>
     <revision>0.1.0</revision>
     <changelist>-SNAPSHOT</changelist>
     <jenkins.version>2.479.3</jenkins.version>
     <java.level>17</java.level>
-    <gitHubRepo>your-org/global-telegram-build-notifier</gitHubRepo>
+    <gitHubRepo>LiaoPerry/global-telegram-build-notifier</gitHubRepo>
   </properties>
 
   <repositories>
