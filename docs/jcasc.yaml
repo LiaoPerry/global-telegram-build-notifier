@@ -1,0 +1,28 @@
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - string:
+              scope: SYSTEM
+              id: "telegram-bot-token"
+              description: "Telegram bot token for global build notification"
+              secret: "${TELEGRAM_BOT_TOKEN}"
+
+unclassified:
+  globalTelegramBuildNotifier:
+    enabled: true
+    jenkinsDisplayName: "Production Jenkins"
+    tokenCredentialId: "telegram-bot-token"
+    chatId: "-1001234567890"
+    messageThreadId: "123"
+    notifyOnStarted: false
+    notifyOnSuccess: false
+    notifyOnFailure: true
+    notifyOnUnstable: true
+    notifyOnAborted: true
+    includeJobRegex: ".*"
+    excludeJobRegex: "^experimental/.*"
+    telegramApiUrl: "https://api.telegram.org"
+    connectTimeoutMillis: 5000
+    readTimeoutMillis: 10000
+    maxRetryAfterSeconds: 30

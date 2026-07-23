@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+  Sends a Telegram message when a Jenkins build completes and matches the global notification policy.
+</div>
